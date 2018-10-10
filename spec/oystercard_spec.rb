@@ -51,7 +51,7 @@ describe OysterCard do
       card.top_up(10)
       card.touch_in(station1)
       card.touch_out(station2)
-      expect(card.journey_log).to eq [{entry: station1.name, exit: station2.name }]
+      expect(card.journey_history).to eq [{entry: station1, exit: station2 }]
     end
   end
 
@@ -73,9 +73,7 @@ describe OysterCard do
         expect {subject.touch_out(station)}.to change{subject.balance}.by -min_fare
       end
 
-      it 'stores entry station when touched in' do
-        expect(subject.entry_station).to eq :aldgate
-      end
+    
     end
 
   end

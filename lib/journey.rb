@@ -26,4 +26,8 @@ class Journey
     !!(@entry_station && @exit_station)
   end
 
+  def journey_info
+    {entry: @entry_station, exit: @exit_station}
+  end
+
 end
