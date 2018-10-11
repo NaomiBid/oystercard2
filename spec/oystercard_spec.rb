@@ -69,11 +69,11 @@ describe OysterCard do
       end
 
       it 'deducts minimum charge from card on touch out' do
-        min_fare = described_class::MIN_FARE
+        min_fare = 1
         expect {subject.touch_out(station)}.to change{subject.balance}.by -min_fare
       end
 
-    
+
     end
 
   end
